@@ -1,21 +1,23 @@
-  ActiveAdmin.register Product do
-    permit_params :name, :description, :unit_price, :status, :stock, :category_id, :picture
+# frozen_string_literal: true
 
-    form do |f|
-      f.inputs do
-        f.input :category
-        f.input :name
-        f.input :description
-        f.input :unit_price
-        f.input :status
-        f.input :stock
-        f.input :picture, as: :file
-      end
+ActiveAdmin.register Product do
+  permit_params :name, :description, :unit_price, :status, :stock, :category_id, :picture
 
-      f.actions
-
-      div image_tag @resource.picture if @resource.picture.attached?
+  form do |f|
+    f.inputs do
+      f.input :category
+      f.input :name
+      f.input :description
+      f.input :unit_price
+      f.input :status
+      f.input :stock
+      f.input :picture, as: :file
     end
 
-    filter :id
+    f.actions
+
+    div image_tag @resource.picture if @resource.picture.attached?
   end
+
+  filter :id
+end

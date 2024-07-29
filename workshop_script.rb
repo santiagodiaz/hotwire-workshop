@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Generate model files based on the schema
 puts 'Generating models...'
 
@@ -8,16 +10,19 @@ rails_command 'generate model Category name:string description:text'
 rails_command 'generate model ShoppingCart user:references'
 
 # Product model
-rails_command 'generate model Product name:string description:text unit_price:decimal status:integer stock:integer category:references picture:attachment'
+rails_command 'generate model Product name:string description:text unit_price:decimal status:integer stock:integer ' \
+              'category:references picture:attachment'
 
 # Order model
 rails_command 'generate model Order user:references total_price:decimal'
 
 # LineItem model
-rails_command 'generate model LineItem shopping_cart:references product:references order:references quantity:integer unit_price:decimal total_price:decimal'
+rails_command 'generate model LineItem shopping_cart:references product:references order:references quantity:integer ' \
+              'unit_price:decimal total_price:decimal'
 
 # ShippingAddress model
-rails_command 'generate model ShippingAddress country:string city:string state:string line1:string line2:string postal_code:string order:references'
+rails_command 'generate model ShippingAddress country:string city:string state:string line1:string line2:string ' \
+              'postal_code:string order:references'
 
 rails_command 'db:migrate'
 

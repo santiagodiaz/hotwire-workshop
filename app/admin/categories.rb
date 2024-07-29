@@ -1,5 +1,7 @@
-  ActiveAdmin.register Category do
-    permit_params :name
+# frozen_string_literal: true
 
-    filter :id
-  end
+ActiveAdmin.register Category do
+  permit_params :name
+
+  filter :id
+end
