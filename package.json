@@ -1,20 +1,27 @@
 {
-  "name": "rails_api_base",
+  "name": "hotwire_workshop",
   "private": "true",
-  "engines" : {
-    "node" : "20.10.0",
-    "yarn" : "1.22"
+  "engines": {
+    "node": "20.10.0",
+    "yarn": "1.22"
   },
   "dependencies": {
     "@activeadmin/activeadmin": "3.2.2",
     "@fortawesome/fontawesome-free": "6.5.2",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.0-beta.2",
     "arctic_admin": "4.3.1",
+    "autoprefixer": "^10.4.19",
     "esbuild": "0.23.0",
+    "esbuild-rails": "^1.0.7",
     "jquery": "3.7.1",
     "jquery-ui": "1.13.3",
-    "jquery-ujs": "1.2.3"
+    "jquery-ujs": "1.2.3",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6"
   },
   "scripts": {
-    "build": "node esbuild.config.mjs"
+    "build": "node esbuild.config.mjs",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   }
 }
