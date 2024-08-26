@@ -66,4 +66,7 @@ Rails.application.configure do
 
   # Use test adapter for ActiveJob
   config.active_job.queue_adapter = :test
+
+  # Compress CSS using a preprocessor.
+  config.assets.css_compressor = nil
 end
