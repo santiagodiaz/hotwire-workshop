@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'home#index'
+
   scope format: :json do
     mount_devise_token_auth_for 'User', at: '/api/v1/users', controllers: {
       registrations: 'api/v1/registrations',
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resource :cart, only: :show
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
